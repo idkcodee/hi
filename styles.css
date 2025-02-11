@@ -1,0 +1,139 @@
+/* Cute Color Palette */
+:root {
+    --mint: #a8e6cf;
+    --pastel-green: #dcedc1;
+    --peach: #ffd3b6;
+    --soft-pink: #ffaaa5;
+    --rosy-pink: #ff8b94;
+}
+
+/* General Page Styling */
+
+
+
+body {
+    background: url('hkbg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--rosy-pink);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* GIF Container */
+#gif-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5; /* Keeps GIF above background */
+}
+
+/* Crying Hello Kitty GIF */
+.cry-kitty {
+    width: 70vw;
+    max-width: 300px;
+    opacity: 0;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Dancing Hello Kitty GIF */
+.slay-kitty {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Cute Card Style */
+.card {
+    background: var(--pastel-green);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    z-index: 10; /* Keeps text above GIF */
+}
+
+/* Main Question */
+.question {
+    font-size: 28px;
+    font-family: 'Dancing Script', cursive;
+    color: var(--rosy-pink);
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+
+.btn {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px; /* Ensures buttons have a defined width */
+    max-width: 200px;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.2s;
+    z-index: 20;
+    position: relative;
+    display: block; /* Makes sure buttons respect text alignment */
+    text-align: center;
+}
+
+
+.yes {
+    background-color: var(--soft-pink);
+    color: white;
+}
+
+.no {
+    background-color: var(--rosy-pink);
+    color: white;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+
+/* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Bouncing effect */
+@keyframes bounce {
+    from { transform: translateX(-50%) translateY(0); }
+    to { transform: translateX(-50%) translateY(-10px); }
+}
