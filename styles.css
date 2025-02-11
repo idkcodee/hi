@@ -7,10 +7,7 @@
     --rosy-pink: #ff8b94;
 }
 
-/* General Page Styling */
-
-
-
+/* Full-Page Background */
 body {
     background: url('hkbg.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -29,49 +26,61 @@ body {
 
 /* GIF Container */
 #gif-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5; /* Keeps GIF above background */
-}
-
-/* Crying Hello Kitty GIF */
-.cry-kitty {
-    width: 70vw;
-    max-width: 300px;
-    opacity: 0;
     position: absolute;
-    bottom: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
-    animation: fadeIn 0.5s ease-in-out forwards;
+    z-index: 10;
 }
 
 /* Dancing Hello Kitty GIF */
 .slay-kitty {
-    position: fixed;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 180px;
+    width: 150px;
     animation: bounce 1s infinite alternate;
 }
 
-/* Cute Card Style */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+/* Crying Hello Kitty GIF */
+.cry-kitty {
+    width: 300px; /* EVEN BIGGER FOR MAXIMUM SADNESS */
+    max-width: 90vw;
+    position: fixed; /* Keep it stuck to the bottom */
+    bottom: -250px; /* 💀 THIS FORCES IT EVEN LOWER */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-in-out forwards;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+/* Main Card */
+/* Main Card */
 .card {
     background: var(--pastel-green);
-    padding: 30px;
+    padding: 30px; /* Increased padding */
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 90%;
     max-width: 400px;
     position: relative;
-    z-index: 10; /* Keeps text above GIF */
+    z-index: 5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Moved down */
 }
 
 /* Main Question */
@@ -79,37 +88,38 @@ body {
     font-size: 28px;
     font-family: 'Dancing Script', cursive;
     color: var(--rosy-pink);
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Added more spacing below text */
+    margin-top: 10px; /* Moved text slightly down */
 }
 
 /* Buttons */
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px; /* Increased gap between buttons */
     align-items: center;
     justify-content: center;
     width: 100%;
     text-align: center;
+    margin-top: 10px; /* Added spacing above buttons */
 }
 
 
+/* Button Styling */
 .btn {
     padding: 12px 20px;
     font-size: 18px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
-    width: 140px; /* Ensures buttons have a defined width */
-    max-width: 200px;
+    width: 140px;
     font-family: 'Poppins', sans-serif;
     transition: transform 0.2s;
     z-index: 20;
     position: relative;
-    display: block; /* Makes sure buttons respect text alignment */
+    display: block;
     text-align: center;
 }
-
 
 .yes {
     background-color: var(--soft-pink);
@@ -125,6 +135,25 @@ body {
     transform: scale(1.1);
 }
 
+/* Falling Photo Effect */
+.rain-drop {
+    position: fixed;
+    top: -10%;
+    opacity: 0.9;
+    animation: fall 4s linear forwards;
+}
+
+/* Animation for falling */
+@keyframes fall {
+    from {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
 
 /* Fade-in effect */
 @keyframes fadeIn {
@@ -132,8 +161,8 @@ body {
     to { opacity: 1; }
 }
 
-/* Bouncing effect */
+/* Bouncing effect for Hello Kitty */
 @keyframes bounce {
-    from { transform: translateX(-50%) translateY(0); }
-    to { transform: translateX(-50%) translateY(-10px); }
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
 }
